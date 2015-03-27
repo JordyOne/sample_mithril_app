@@ -34,7 +34,7 @@ todo.vm = (function () {
         //a slot to store the name of a new todo before it is created
         vm.description = m.prop("");
 
-        //adds a todo to the list, and clears the description field for user convenience
+        //adds a todo to the database, the list, and clears the description field for user convenience
         vm.add = function () {
             if (vm.description()) {
                 m.request({
