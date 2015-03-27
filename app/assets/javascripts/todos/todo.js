@@ -37,11 +37,10 @@ todo.vm = (function () {
         //adds a todo to the list, and clears the description field for user convenience
         vm.add = function () {
             if (vm.description()) {
-                var task = new todo.Todo({description: vm.description(), done: false});
                 m.request({
                     method: "POST",
                     url: "/addTodo",
-                    data: task
+                    data: {description: vm.description(), done: false}
                 })
                     .then(function (data) {
                         var newTodo = new todo.Todo(data);
