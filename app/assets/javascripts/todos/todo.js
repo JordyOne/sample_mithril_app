@@ -20,7 +20,7 @@ todo.TodoList = Array;
 //and takes care of the logic surrounding when adding is permitted
 //and clearing the input after adding a todo to the list
 todo.vm = (function () {
-    var vm = {}
+    var vm = {};
     vm.init = function () {
         //a running list of todos
         vm.list = new todo.TodoList();
@@ -37,10 +37,17 @@ todo.vm = (function () {
         //adds a todo to the list, and clears the description field for user convenience
         vm.add = function () {
             if (vm.description()) {
-                var data = {description: m.prop(vm.description), done: m.prop(false)};
-                return m.request({method: "POST", url: "/addTodo", data: {description: data.description(), done: data.done()}})
-                  .then(data.error);
-                vm.description("");
+                var task = new todo.Todo({description: vm.description(), done: false});
+                m.request({
+                    method: "POST",
+                    url: "/addTodo",
+                    data: task
+                })
+                    .then(function (data) {
+                        var newTodo = new todo.Todo(data);
+                        vm.list.push(newTodo)
+                    })
+                    .then(vm.description(""));
             }
         };
     };
@@ -68,7 +75,7 @@ todo.view = function () {
                                 checked: task.done()
                             })
                         ]),
-                        m("td", {style: {textDecoration: task.done() ? "line-through" : "none"}}, task.description()),
+                        m("td", {style: {textDecoration: task.done() ? "line-through" : "none"}}, task.description())
                     ])
                 })
             ])
