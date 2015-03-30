@@ -1,5 +1,5 @@
 m.route(document, "/", {
-    "/": todo,
+    "/": dashboard,
     "/todos": todo,
     "/dashboard": dashboard,
     "/about": about
