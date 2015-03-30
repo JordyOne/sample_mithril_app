@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require mithril
 //= require ./todos/todos.js
-//= require ./head/head.js
 //= require ./about/about.js
 //= require ./navigation/navigation.js
 //= require ./dashboard/dashboard.js
@@ -27,5 +26,4 @@
 ///** @jsx m */ Where does this work?
 
 //initialize the application
-m.module(document.body);
 

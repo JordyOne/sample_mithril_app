@@ -1,13 +1,21 @@
 var dashboard = {};
 dashboard.controller = function () {
-    dashboard.vm.init();
+    this.todo = todo.controller();
+    this.navigation = navigation.controller()
 };
 
-dashboard.vm = {};
-dashboard.vm.init = function () {
-    this.todo = todo;
-};
 
-dashboard.view = function () {
-    var vm = dashboard.vm;
+dashboard.view = function (ctrl) {
+    return [
+        m("body", [
+            m('div', [
+                navigation.view(ctrl.navigation)
+            ]),
+            m('div', [
+                todo.view(ctrl.todo)
+            ])
+        ])
+    ]
+
+
 };
