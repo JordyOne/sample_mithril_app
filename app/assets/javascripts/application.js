@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require mithril
 //= require ./todos/todos.js
 //= require ./about/about.js

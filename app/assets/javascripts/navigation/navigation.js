@@ -4,7 +4,7 @@ navigation.controller = function () {
 
 };
 
-navigation.view = function (ctrl) {
+navigation.view = function () {
     return m('header#header', [
         m('h1', 'todos'),
         m('a[href=/?/about]', 'About'),

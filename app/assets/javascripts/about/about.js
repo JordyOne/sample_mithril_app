@@ -5,7 +5,8 @@ var about = {
     view: function (controller) {
         return m("html", [
             m("body", [
-                m("p", controller.content)
+                m("div", controller.content)
+
             ])
         ])
     }

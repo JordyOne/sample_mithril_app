@@ -11,7 +11,7 @@ dashboard.view = function (ctrl) {
             m('div', [
                 navigation.view(ctrl.navigation)
             ]),
-            m('div', [
+            m('div#app', [
                 todo.view(ctrl.todo)
             ])
         ])
