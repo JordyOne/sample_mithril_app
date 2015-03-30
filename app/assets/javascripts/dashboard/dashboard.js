@@ -1,12 +1,13 @@
-var dashboard = {
-    controller: function () {
-        this.id = 'John Doe';
-    },
-    view: function (controller) {
-        return m("html", [
-            m("body", [
-                m("div", 'John Doe')
-            ])
-        ])
-    }
+var dashboard = {};
+dashboard.controller = function () {
+    dashboard.vm.init();
+};
+
+dashboard.vm = {};
+dashboard.vm.init = function () {
+    this.todo = todo;
+};
+
+dashboard.view = function () {
+    var vm = dashboard.vm;
 };

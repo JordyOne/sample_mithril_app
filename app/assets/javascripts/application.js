@@ -14,16 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require mithril
-//= require_self
 //= require ./todos/todos.js
-//= require ./dashboard/dashboard.js
+//= require ./head/head.js
 //= require ./about/about.js
+//= require ./navigation/navigation.js
+//= require ./dashboard/dashboard.js
 //= require ./routes/routes.js
+//= require_self
 
 // Need to manually add loading order instead of relying on asset pipeline
 
 ///** @jsx m */ Where does this work?
 
 //initialize the application
-m.module(document, {controller: todo.controller, view: todo.view});
+m.module(document.body);
 
