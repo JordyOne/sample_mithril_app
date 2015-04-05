@@ -12,7 +12,7 @@ dashboard.view = function (ctrl) {
                 navigation.view(ctrl.navigation)
             ]),
             m('div#app', [
-                todo.view(ctrl.todo)
+                todo.index.view(ctrl.todo)
             ])
         ])
     ]

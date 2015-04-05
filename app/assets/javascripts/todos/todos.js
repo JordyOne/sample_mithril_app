@@ -56,7 +56,7 @@ todo.controller = function () {
 };
 
 //here's the view
-todo.view = function () {
+todo.index.view = function () {
     return m("div", [
         m("input", {onchange: m.withAttr("value", todo.vm.description), value: todo.vm.description()}),
 

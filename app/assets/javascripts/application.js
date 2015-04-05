@@ -17,12 +17,15 @@
 //= require ./about/about.js
 //= require ./navigation/navigation.js
 //= require ./dashboard/dashboard.js
-//= require ./routes/routes.js
 //= require_self
 
 // Need to manually add loading order instead of relying on asset pipeline
 
-///** @jsx m */ Where does this work?
-
-//initialize the application
+m.route(document, "/", {
+  "/": dashboard,
+  "/todos": todo.index,
+  "/todos/new": todo.new,
+  "/dashboard": dashboard,
+  "/about": about
+});
 
